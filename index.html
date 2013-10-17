@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Geobound</title>
+        <meta charset="utf-8" />
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min-js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <style type="text/css">
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="map" style="width:100%;height:100%;"></div>
+
+        <script>
+            var osm = '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
+            var tilelayer = L.tileLayer('http://a.tile2.opencyclemap.org/transport/{z}/{x}/{y}.png', {
+                                   attribution: '&copy; OpenCycleMap, ' + 'Map data ' + osm
+                            });
+            var map = L.map('map');
+            tilelayer.addTo(map);
+            map.invalidateSize();
+        </script>
+    </body>
+</html>
